@@ -103,35 +103,35 @@ iso_date, url, email, number, date, time
 
 ```json
 {
-    "origin": "",
-    "element": {},
-    "name": "email",
-    "handler": [{
-        "priority": 1,
-        "directive": "r-required"
-    }, {
-        "priority": 2,
-        "directive": "r-type"
-    }, {
-  			"priority": 200,
-        "directive": "r-custom"
-    }],
-    "model": {
-        "type": "expression",
-        "body": "c._sg_('email', d, e)",
-        "constant": false,
-        "setbody": null
-    },
-    "untouched": false,
-    "touched": true,
-    "modified": true,
-    "dirty": true,
-    "pristine": false,
-    "invalid": false,
-    "valid": false,
-    "required": false,
-    "type": false,
-    "custom": false
+  "origin": "",
+  "element": {},
+  "name": "email",
+  "handler": [{
+    "priority": 1,
+    "directive": "r-required"
+  }, {
+    "priority": 2,
+    "directive": "r-type"
+  }, {
+    "priority": 200,
+    "directive": "r-custom"
+  }],
+  "model": {
+    "type": "expression",
+    "body": "c._sg_('email', d, e)",
+    "constant": false,
+    "setbody": null
+  },
+  "untouched": false,
+  "touched": true,
+  "modified": true,
+  "dirty": true,
+  "pristine": false,
+  "invalid": false,
+  "valid": false,
+  "required": false,
+  "type": false,
+  "custom": false
 }
 ```
 
@@ -139,13 +139,13 @@ iso_date, url, email, number, date, time
 
 ```json
 {
-    "untouched": false,
-    "touched": true,
-    "modified": true,
-    "dirty": true,
-    "pristine": false,
-    "invalid": false,
-    "valid": false
+  "untouched": false,
+  "touched": true,
+  "modified": true,
+  "dirty": true,
+  "pristine": false,
+  "invalid": false,
+  "valid": false
 }
 ```
 
