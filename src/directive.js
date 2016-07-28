@@ -2,7 +2,7 @@
  * @Author: maggiehe
  * @Date:   2016-07-19 20:49:33
  * @Last Modified by:   maggiehe
- * @Last Modified time: 2016-07-26 16:30:48
+ * @Last Modified time: 2016-07-27 21:33:58
  * 内置指令处理
  */
 'use strict';
@@ -61,8 +61,8 @@ let ruleLink = function(element, dValue, dName, attrs) {
   this.addRuleHandler(name, {
     priority: PRIORITY[validationType],
     directive: dName,
-    handler: model => {
-      let rule = util.getExpressionValue(dValue)
+    handler: function(model) {
+      let rule = util.getExpressionValue.call(this, dValue)
       return validationMethods[validationType](model, rule)
     }
   });

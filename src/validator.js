@@ -2,7 +2,7 @@
  * @Author: maggiehe
  * @Date:   2016-07-21 16:01:27
  * @Last Modified by:   maggiehe
- * @Last Modified time: 2016-07-26 17:16:50
+ * @Last Modified time: 2016-07-28 11:16:55
  * 验证功能：监听、状态管理、信息收集
  */
 
@@ -23,7 +23,7 @@ let blurHandle = function(field) {
   if (!field.dirty) { //dirty前blur，需要验证
     this.checkValidity(field.name)
   }
-  // this.$update() //todo:是否需要
+  this.$update()
 }
 
 // 验证项watch处理
@@ -87,7 +87,7 @@ let validator = {
     let data = this.data
 
     // 初始化验证项
-    data.validation[name] = {}
+    data.validation[name] = data.validation[name] || {}
     let field = data.validation[name]
     Object.assign(field,
       INITIAL_STATUS, {
@@ -96,7 +96,6 @@ let validator = {
         name: name,
         model: model
       })
-    this.calcStatus()
 
     // 添加事件监听
     this.addValidator(name)
@@ -206,12 +205,12 @@ let validator = {
   },
 
   // 验证
-  checkValidity(name) {
+  checkValidity(name, noCalc) {
     let data = this.data
     if (!name) {
       let fields = data.validation.__fields
       fields.forEach(field => {
-        this.checkValidity(field)
+        this.checkValidity(field, true)
       });
     } else {
       let invalid,
@@ -226,14 +225,15 @@ let validator = {
           field[util.getValidationType(item.directive)] = false
           return
         }
-        invalid = !item.handler(model) //如果验证方法返回false，非法
+        invalid = !item.handler.call(this, model) //如果验证方法返回false，非法
         field[util.getValidationType(item.directive)] = invalid
         if (invalid) {
           field.invalid = true
         }
       })
     }
-    this.calcStatus()
+
+    !noCalc && this.calcStatus()
   }
 }
 export default validator

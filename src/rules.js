@@ -2,7 +2,7 @@
  * @Author: maggiehe
  * @Date:   2016-07-19 20:51:08
  * @Last Modified by:   maggiehe
- * @Last Modified time: 2016-07-22 17:00:22
+ * @Last Modified time: 2016-07-28 09:55:28
  * 内置的验证方法
  */
 'use strict';
@@ -70,7 +70,7 @@ let rules = {
   },
   // 自定义验证
   custom: function(value, method) {
-    return method(this)
+    return method
   }
 }
 export let validationMethods = rules
