@@ -2,7 +2,7 @@
  * @Author: maggiehe
  * @Date:   2016-07-21 16:18:11
  * @Last Modified by:   maggiehe
- * @Last Modified time: 2016-07-26 15:59:20
+ * @Last Modified time: 2016-08-02 23:10:03
  */
 
 'use strict';
@@ -32,4 +32,11 @@ export const INITIAL_STATUS = {
   pristine: true,
   invalid: false,
   valid: false
+}
+
+// 验证模式
+export const VALIDATION_MODES = {
+  blur: 0,
+  change: 1,
+  watch: 2
 }

@@ -2,7 +2,7 @@
  * @Author: maggiehe
  * @Date:   2016-07-19 20:51:08
  * @Last Modified by:   maggiehe
- * @Last Modified time: 2016-07-28 09:55:28
+ * @Last Modified time: 2016-08-03 00:02:47
  * 内置的验证方法
  */
 'use strict';
@@ -13,7 +13,7 @@ let rules = {
     if (rule === 'false' || !rule) {
       return true
     }
-    if (value === 0 || value === false) return true
+    if (value === 0) return true
     return !!value
   },
   // 类型验证
@@ -73,5 +73,9 @@ let rules = {
     return method
   }
 }
+
+// 所有的验证方法
 export let validationMethods = rules
+
+// 获取当前所有的验证规则
 export let validationTypes = Object.keys(rules)

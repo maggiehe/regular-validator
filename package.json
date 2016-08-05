@@ -1,6 +1,6 @@
 {
   "name": "regular-validator",
-  "version": "1.1.4",
+  "version": "1.1.6",
   "description": "regularjs validator",
   "main": "lib/index.js",
   "scripts": {
